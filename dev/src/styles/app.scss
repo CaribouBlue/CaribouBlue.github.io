@@ -3,12 +3,16 @@
 
 // Monochromatic center #4C6484
 
+@media screen and (min-width: 480px) {
+
+}
+
 .app {
 	height: 100vh;
 	width: 100vw;
 	background: linear-gradient(white, #91ADD0 200%);
 	display: grid;
-	grid-template: 3em 1.3fr 3em 0.5fr 0.5fr 1fr / 3em 1fr 3em;
+	grid-template: 3rem 1.3fr 3rem 0.5fr 0.5fr 1fr / 3rem 1fr 3rem;
 }
 
 .menu {
@@ -44,7 +48,7 @@
 	}
 
 	p {
-		margin-right: 5em;
+		margin-right: 5rem;
 	}
 
 	span {
@@ -54,13 +58,13 @@
 
 .drop-down {
 	position: absolute;
-	left: 3em;
-	top: 5em;
+	left: 3rem;
+	top: 5rem;
 	opacity: 0;
 	z-index: 10;
 
 	a {
-		margin-bottom: 2em;
+		margin-bottom: 2rem;
 		text-decoration: none;
 		color: #333333;
 		font-family: lato;
@@ -75,7 +79,7 @@
 	grid-column: 2;
 	grid-row: 2;
 	font-family: lato;
-	font-size: 5em;
+	font-size: 8vmin;
 	font-weight: 300;
 	color: #333333;
 	z-index: 0;
@@ -94,7 +98,7 @@
 
 .spacer {
 	border-bottom: 1px solid grey;
-	width: 30em;
+	width: 48vmin;
 }
 
 .name-subtitle {
@@ -104,8 +108,8 @@
 	grid-column: 2;
 	grid-row: 4;
 	font-family: Raleway;
-	font-size: 1.5em;
-	letter-spacing: 0.5em;
+	font-size: 2.5vmin;
+	letter-spacing: 1.2vmin;
 	color: #4D4D4D;
 
 	opacity: 0;
@@ -121,20 +125,20 @@
 	grid-row: 5;
 
 	span {
-		margin-left: 5em;
-		margin-right: 5em;
+		margin-left: 8vmin;
+		margin-right: 8vmin;
 	}
 
 	a {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 4em;
-		width: 4em;
+		height: 7vmin;
+		width: 7vmin;
 	}
 
 	.logo-img {
-		height: 4em;
+		height: 7vmin;
 		width: auto;
 
 		opacity: 0;
