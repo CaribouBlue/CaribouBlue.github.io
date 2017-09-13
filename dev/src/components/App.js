@@ -22,8 +22,8 @@ constructor(props) {
       $('.logo-img').animate({ opacity: 1, }, 1000, 'swing');
 
       // listeners
-      $('.logo-img').on('mouseover', (e) => $(e.target).animate({ height: '3.9em' }, 100));
-      $('.logo-img').on('mouseleave', (e) => $(e.target).animate({ height: '4em' }, 100));
+      $('.logo-img').on('mouseover', (e) => $(e.target).animate({ height: '6.7vmin' }, 100));
+      $('.logo-img').on('mouseleave', (e) => $(e.target).animate({ height: '7vmin' }, 100));
 
       $('#ham').on('click', this.toggleHam);
     });
