@@ -8,7 +8,7 @@ constructor(props) {
   super(props);
 
   this.state = {
-    menu: true,
+    menu: false,
   }
 
   this.toggleHam = this.toggleHam.bind(this);
@@ -24,14 +24,13 @@ constructor(props) {
       // listeners
       $('.logo-img').on('mouseover', (e) => $(e.target).animate({ height: '3.9em' }, 100));
       $('.logo-img').on('mouseleave', (e) => $(e.target).animate({ height: '4em' }, 100));
-      $('.logo-img').on('click', (e) => $(e.target).animate({ opacity: 0 }));
 
       $('#ham').on('click', this.toggleHam);
     });
   }
 
   toggleHam(e) {
-    if (this.state.menu){
+    if (!this.state.menu){
       $('#top').animate({ opacity: 0 })
       setTimeout(() => $('#mid').animate({ opacity: 0 }, () => {
         $('.drop-down').animate({ opacity: 1})
@@ -39,7 +38,7 @@ constructor(props) {
       setTimeout(() => $('#bottom').animate({ opacity: 0 }, () => {
         $('#X').animate({ opacity: 1 });
       }), 200);
-      this.setState({ menu: false });
+      this.setState({ menu: true });
     } else {
         setTimeout(() => $('.drop-down').animate({ opacity: 0}), 200);
       $('#X').animate({ opacity: 0 }, () => {
@@ -47,7 +46,7 @@ constructor(props) {
         setTimeout(() => $('#mid').animate({ opacity: 1 }), 100);
         setTimeout(() => $('#top').animate({ opacity: 1 }), 200);
       });
-      this.setState({ menu: true });
+      this.setState({ menu: false });
     }
   }
 
