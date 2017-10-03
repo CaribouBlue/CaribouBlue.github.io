@@ -31,6 +31,7 @@ constructor(props) {
 
   toggleHam(e) {
     if (!this.state.menu){
+      this.setState({ menu: true });
       $('#top').animate({ opacity: 0 })
       setTimeout(() => $('#mid').animate({ opacity: 0 }, () => {
         $('.drop-down').animate({ opacity: 1})
@@ -38,15 +39,14 @@ constructor(props) {
       setTimeout(() => $('#bottom').animate({ opacity: 0 }, () => {
         $('#X').animate({ opacity: 1 });
       }), 200);
-      this.setState({ menu: true });
     } else {
-        setTimeout(() => $('.drop-down').animate({ opacity: 0}), 200);
+      this.setState({ menu: false });
+      setTimeout(() => $('.drop-down').animate({ opacity: 0}), 200);
       $('#X').animate({ opacity: 0 }, () => {
         $('#bottom').animate({ opacity: 1 })
         setTimeout(() => $('#mid').animate({ opacity: 1 }), 100);
         setTimeout(() => $('#top').animate({ opacity: 1 }), 200);
       });
-      this.setState({ menu: false });
     }
   }
 
@@ -55,6 +55,15 @@ constructor(props) {
       <div
         className="app"
       >
+        <p
+          className="support-warning"
+        >
+          {
+            CSS.supports('display', 'grid') ? 
+            null : 
+            'You\'re using a browser that does not support grid display. Please update your browser to view this website properly.'
+          }
+        </p>
         <div
           className="menu"
         >
@@ -79,14 +88,16 @@ constructor(props) {
         <div
           className="drop-down"
         >
-          <span />
+        <Link
+          to={'/'}
+        >Under Construction</Link>
 {
-//          <p>About</p>
-//          <p>Blog</p>
+          // <p>About</p>
+          // <p>Blog</p>
+          // <Link
+          //   to={'/'}
+          // >Contact</Link>
 }
-          <Link
-            to={'/'}
-          >Contact</Link>
         </div>
         <h1
           className="name-title"
