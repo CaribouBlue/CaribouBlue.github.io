@@ -52,11 +52,6 @@ table {
   background: linear-gradient(white, #91ADD0 200%);
   display: grid;
   grid-template: 3rem 1.3fr 3rem 0.5fr 0.5fr 1fr / 3rem 1fr 3rem; }
-  .app .support-warning {
-    color: red;
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px; }
 
 .menu {
   display: flex;
@@ -158,4 +153,4 @@ table {
     width: auto;
     opacity: 0; }
 
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=app-flex.css.map */
