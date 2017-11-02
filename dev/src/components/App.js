@@ -25,7 +25,7 @@ constructor(props) {
       $('.logo-img').on('mouseover', (e) => $(e.target).animate({ height: '6.7vmin' }, 100));
       $('.logo-img').on('mouseleave', (e) => $(e.target).animate({ height: '7vmin' }, 100));
 
-      $('#ham').on('click', this.toggleHam);
+      //$('#ham').on('click', this.toggleHam);
     });
   }
 
@@ -41,7 +41,7 @@ constructor(props) {
       }), 200);
     } else {
       this.setState({ menu: false });
-      setTimeout(() => $('.drop-down').animate({ opacity: 0}), 200);
+      setTimeout(() => $('.drop-down').animate({ opacity: 1}), 200);
       $('#X').animate({ opacity: 0 }, () => {
         $('#bottom').animate({ opacity: 1 })
         setTimeout(() => $('#mid').animate({ opacity: 1 }), 100);
@@ -69,6 +69,7 @@ constructor(props) {
         >
           <div
             id="ham"
+            onClick={this.toggleHam}
           >
             <div
               id="top"
@@ -82,6 +83,7 @@ constructor(props) {
             <img
               id="X"
               src="close-button.svg"
+              alt=""
             />
           </div>
         </div>
@@ -89,8 +91,8 @@ constructor(props) {
           className="drop-down"
         >
         <Link
-          to={'/'}
-        >Under Construction</Link>
+          to={'/portfolio'}
+        >Portfolio</Link>
 {
           // <p>About</p>
           // <p>Blog</p>
@@ -121,6 +123,7 @@ constructor(props) {
             <img
               className="logo-img"
               src="logo-github.svg"
+              alt=""
             />
           </a>
           <span />
@@ -130,6 +133,7 @@ constructor(props) {
             <img
               className="logo-img"
               src="logo-linkedin.svg"
+              alt=""
             />
           </a>
         </div>
