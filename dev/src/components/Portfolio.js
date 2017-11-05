@@ -31,14 +31,14 @@ class Portfolio extends React.Component {
       this.setState({ menu: true });
       $('#top').animate({ opacity: 0 })
       setTimeout(() => $('#mid').animate({ opacity: 0 }, () => {
-        $('.drop-down').animate({ opacity: 1})
+        $('.drop-down').css({ visibility: 'visible' }).animate({ opacity: 1})
       }), 100);
       setTimeout(() => $('#bottom').animate({ opacity: 0 }, () => {
         $('#X').animate({ opacity: 1 });
       }), 200);
     } else {
       this.setState({ menu: false });
-      setTimeout(() => $('.drop-down').animate({ opacity: 0}), 200);
+      setTimeout(() => $('.drop-down').css({ visibility: 'hidden' }).animate({ opacity: 0}), 200);
       $('#X').animate({ opacity: 0 }, () => {
         $('#bottom').animate({ opacity: 1 })
         setTimeout(() => $('#mid').animate({ opacity: 1 }), 100);
@@ -48,6 +48,20 @@ class Portfolio extends React.Component {
   }
 
   render() {
+    const portfolio = [
+      {
+        thumbnail: 'project-thumbnails/Halfwaze.png',
+        title: 'Halfwaze',
+      },
+      {
+        thumbnail: 'project-thumbnails/Halfwaze.png',
+        title: 'Halfwaze',
+      },
+      {
+        thumbnail: 'project-thumbnails/Halfwaze.png',
+        title: 'Halfwaze',
+      },
+    ];
     return (
       <div
         className="portfolio"
@@ -78,9 +92,9 @@ class Portfolio extends React.Component {
         <div
           className="drop-down"
         >
-        <Link
-          to={'/'}
-        >Home</Link>
+          <Link
+            to={'/'}
+          >Home</Link>
 {
           // <p>About</p>
           // <p>Blog</p>
@@ -95,11 +109,15 @@ class Portfolio extends React.Component {
         <div
           className="pli-grid"
         >
-          <PortfolioLI
-            thumbnail="portfolio-img-1.png"
-            title="Halfwaze"
-            history={this.props.history}
-          />
+          {
+            portfolio.map(item => (
+              <PortfolioLI
+                thumbnail={item.thumbnail}
+                title={item.title}
+                history={this.props.history}
+              />
+            ))
+          }
         </div>
       </div>
     );

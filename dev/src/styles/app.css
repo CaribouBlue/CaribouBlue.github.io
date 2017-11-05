@@ -58,6 +58,10 @@ body, html, #root {
   align-items: center;
   position: fixed;
   overflow-y: auto; }
+  .portfolio .menu {
+    position: absolute;
+    left: 2.8rem;
+    top: 2rem; }
   .portfolio .page-title {
     font-family: lato;
     font-size: 8vmin;
@@ -70,27 +74,32 @@ body, html, #root {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    opacity: 0; }
+    opacity: 0;
+    width: 100vmin; }
     .portfolio .pli-grid .pli {
       display: flex;
       flex-direction: column;
-      max-width: 45vw;
-      margin: 0.25vmin; }
+      width: 45vmin;
+      margin: 1vmin; }
       .portfolio .pli-grid .pli .pli-title {
+        width: 45vmin;
+        text-align: center;
         font-family: Raleway;
         font-size: 4vmin;
         letter-spacing: 1.2vmin;
         color: #4D4D4D;
         position: absolute;
-        transform: translate(50%, 200%); }
+        transform: translateY(200%); }
       .portfolio .pli-grid .pli .pli-description {
         font-family: Raleway;
         font-size: 2.5vmin;
         color: #4D4D4D; }
       .portfolio .pli-grid .pli .thumbnail {
+        box-sizing: border-box;
         width: 100%;
-        max-width: 50vmin;
-        height: auto; }
+        height: auto;
+        padding: 4px;
+        border: 3px solid #333333; }
       .portfolio .pli-grid .pli .thumbnail:hover {
         opacity: 0.2; }
 
@@ -142,12 +151,14 @@ body, html, #root {
   left: 3rem;
   top: 5rem;
   opacity: 0;
+  visibility: hidden;
   z-index: 10; }
   .drop-down a {
     margin-bottom: 2rem;
     text-decoration: none;
     color: #333333;
-    font-family: lato; }
+    font-family: lato;
+    font-size: 1.9vmin; }
 
 .name-title {
   display: flex;

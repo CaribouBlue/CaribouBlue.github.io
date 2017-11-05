@@ -34,14 +34,14 @@ constructor(props) {
       this.setState({ menu: true });
       $('#top').animate({ opacity: 0 })
       setTimeout(() => $('#mid').animate({ opacity: 0 }, () => {
-        $('.drop-down').animate({ opacity: 1})
+        $('.drop-down').css({ visibility: 'visible' }).animate({ opacity: 1})
       }), 100);
       setTimeout(() => $('#bottom').animate({ opacity: 0 }, () => {
         $('#X').animate({ opacity: 1 });
       }), 200);
     } else {
       this.setState({ menu: false });
-      setTimeout(() => $('.drop-down').animate({ opacity: 1}), 200);
+      setTimeout(() => $('.drop-down').css({ visibility: 'hidden' }).animate({ opacity: 0}), 200);
       $('#X').animate({ opacity: 0 }, () => {
         $('#bottom').animate({ opacity: 1 })
         setTimeout(() => $('#mid').animate({ opacity: 1 }), 100);
@@ -90,9 +90,9 @@ constructor(props) {
         <div
           className="drop-down"
         >
-        <Link
-          to={'/portfolio'}
-        >Portfolio</Link>
+          <Link
+            to={'/portfolio'}
+          >Portfolio</Link>
 {
           // <p>About</p>
           // <p>Blog</p>

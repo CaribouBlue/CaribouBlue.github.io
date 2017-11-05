@@ -17,6 +17,12 @@ body, html, #root {
 	position: fixed;
 	overflow-y: auto;
 
+	.menu {
+		position: absolute;
+		left: 2.8rem;
+		top: 2rem;
+	}
+
 	.page-title{
 		font-family: lato;
 		font-size: 8vmin;
@@ -32,20 +38,24 @@ body, html, #root {
 		flex-wrap: wrap;
 		justify-content: center;
 		opacity: 0;
+		width: 100vmin;
 		
 		.pli {
 			display: flex;
 			flex-direction: column;
-			max-width: 45vw;
-			margin: 0.25vmin;
+			width: 45vmin;
+			margin: 1vmin;
+
 
 			.pli-title{
+				width: 45vmin;
+				text-align: center;
 				font-family: Raleway;
 				font-size: 4vmin;
 				letter-spacing: 1.2vmin;
 				color: #4D4D4D;
 				position: absolute;
-				transform: translate(50%, 200%);
+				transform: translateY(200%);
 			}
 
 			.pli-description {
@@ -55,9 +65,11 @@ body, html, #root {
 			}
 
 			.thumbnail {
+				box-sizing: border-box;
 				width: 100%;
-				max-width: 50vmin;
 				height: auto;
+				padding: 4px;
+				border: 3px solid #333333;
 			}
 
 			.thumbnail:hover {
@@ -132,6 +144,7 @@ body, html, #root {
 	left: 3rem;
 	top: 5rem;
 	opacity: 0;
+	visibility: hidden;
 	z-index: 10;
 
 	a {
@@ -139,6 +152,7 @@ body, html, #root {
 		text-decoration: none;
 		color: #333333;
 		font-family: lato;
+		font-size: 1.9vmin;
 	}
 }
 
