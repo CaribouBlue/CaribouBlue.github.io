@@ -19,6 +19,9 @@ class Portfolio extends React.Component {
       // initial animations
       $('.page-title').animate({ opacity: 1}, 1000, 'swing');
       $('.pli-grid').animate({ opacity: 1}, 1000, 'swing');
+      $('#top').animate({ opacity: 1 })
+      setTimeout(() => $('#mid').animate({ opacity: 1 }), 100);
+      setTimeout(() => $('#bottom').animate({ opacity: 1 }), 200);
 
       // event listeners
       //$('#ham').on('click', this.toggleHam);
@@ -50,12 +53,12 @@ class Portfolio extends React.Component {
   render() {
     const portfolio = [
       {
-        thumbnail: 'project-thumbnails/Halfwaze.png',
+        thumbnail: 'project-thumbnails/halfwaze.png',
         title: 'Halfwaze',
       },
       {
-        thumbnail: 'project-thumbnails/Halfwaze.png',
-        title: 'Halfwaze',
+        thumbnail: 'project-thumbnails/hokono.png',
+        title: 'Hokono',
       },
       {
         thumbnail: 'project-thumbnails/Halfwaze.png',

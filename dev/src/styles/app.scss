@@ -37,25 +37,29 @@ body, html, #root {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		align-items: center;
 		opacity: 0;
-		width: 100vmin;
+		width: 90vw;
 		
 		.pli {
 			display: flex;
 			flex-direction: column;
-			width: 45vmin;
+			justify-content: center;
+			width: 25vw;
 			margin: 1vmin;
+			box-sizing: border-box;
+			box-shadow: 0px 0px 20px -3px grey;
+			border: 2px solid grey;
 
 
 			.pli-title{
-				width: 45vmin;
+				width: 25vw;
 				text-align: center;
 				font-family: Raleway;
-				font-size: 4vmin;
+				font-size: 2vw;
 				letter-spacing: 1.2vmin;
 				color: #4D4D4D;
 				position: absolute;
-				transform: translateY(200%);
 			}
 
 			.pli-description {
@@ -68,8 +72,6 @@ body, html, #root {
 				box-sizing: border-box;
 				width: 100%;
 				height: auto;
-				padding: 4px;
-				border: 3px solid #333333;
 			}
 
 			.thumbnail:hover {
@@ -113,12 +115,14 @@ body, html, #root {
 			width: 25px;
 			margin-bottom: 4px;
 			background-color: #333333;
+			opacity: 0;
 		}
 
 		#bottom {
 			height: 3px;
 			width: 25px;
 			background-color: #333333;
+			opacity: 0;
 		}
 
 		#X {

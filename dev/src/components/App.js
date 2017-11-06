@@ -20,6 +20,9 @@ constructor(props) {
       $('.name-title').animate({ opacity: 1, top: 0 }, 1000, 'swing');
       $('.name-subtitle').animate({ opacity: 1, top: 0 }, 1000, 'swing');
       $('.logo-img').animate({ opacity: 1, }, 1000, 'swing');
+      $('#top').animate({ opacity: 1 })
+      setTimeout(() => $('#mid').animate({ opacity: 1 }), 100);
+      setTimeout(() => $('#bottom').animate({ opacity: 1 }), 200);
 
       // listeners
       $('.logo-img').on('mouseover', (e) => $(e.target).animate({ height: '6.7vmin' }, 100));

@@ -17,6 +17,10 @@ const PortfolioRouter = props => (
       render={() => <p>Halfwaaze</p>}
     />
     <Route
+      path="/portfolio/hokono"
+      render={() => <p>Hokono</p>}
+    />
+    <Route
       path="*"
       render={() => <Redirect to="/portfolio" />}
     />
