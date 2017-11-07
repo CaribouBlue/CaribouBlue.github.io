@@ -10,17 +10,17 @@ class PortfolioLI extends React.Component {
     };
 
     this.toggleHover = this.toggleHover.bind(this);
-    this.imgClickHandler = this.imgClickHandler.bind(this);
+    //this.imgClickHandler = this.imgClickHandler.bind(this);
   }
 
   toggleHover() {
     this.setState({ hover: !this.state.hover });
   }
 
-  imgClickHandler() {
-    window.location.assign(`https://github.com/CaribouBlue/${this.props.title}`);
-    //this.props.history.push(`/portfolio/${this.props.title.toLowerCase()}`);
-  }
+  // imgClickHandler() {
+  //   //window.location.assign(`https://github.com/CaribouBlue/${this.props.title}`);
+  //   //this.props.history.push(`/portfolio/${this.props.title.toLowerCase()}`);
+  // }
 
   getRender() {
     if (this.state.hover) {
@@ -36,19 +36,23 @@ class PortfolioLI extends React.Component {
 
   render() {
     return (
-      <div
-        className="pli"
+      <a
+        href={`https://github.com/CaribouBlue/${this.props.title}`}
       >
-        {this.getRender()}
-        <img
-          className="thumbnail"
-          onMouseOver={this.toggleHover}
-          onMouseLeave={this.toggleHover}
-          onClick={this.imgClickHandler}
-          src={this.props.thumbnail}
-          alt={this.props.thumbnailAlt || ""}
-        />
-      </div>
+        <div
+          className="pli"
+        >
+          {this.getRender()}
+          <img
+            className="thumbnail"
+            onMouseOver={this.toggleHover}
+            onMouseLeave={this.toggleHover}
+            //onClick={this.imgClickHandler}
+            src={this.props.thumbnail}
+            alt={this.props.thumbnailAlt || ""}
+          />
+        </div>
+      </a>
     );
   }
 };
