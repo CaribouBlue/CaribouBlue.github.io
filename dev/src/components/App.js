@@ -20,12 +20,15 @@ constructor(props) {
       $('.name-title').animate({ opacity: 1, top: 0 }, 1000, 'swing');
       $('.name-subtitle').animate({ opacity: 1, top: 0 }, 1000, 'swing');
       $('.logo-img').animate({ opacity: 1, }, 1000, 'swing');
+      $('#top').animate({ opacity: 1 })
+      setTimeout(() => $('#mid').animate({ opacity: 1 }), 100);
+      setTimeout(() => $('#bottom').animate({ opacity: 1 }), 200);
 
       // listeners
       $('.logo-img').on('mouseover', (e) => $(e.target).animate({ height: '6.7vmin' }, 100));
       $('.logo-img').on('mouseleave', (e) => $(e.target).animate({ height: '7vmin' }, 100));
 
-      $('#ham').on('click', this.toggleHam);
+      //$('#ham').on('click', this.toggleHam);
     });
   }
 
@@ -34,14 +37,14 @@ constructor(props) {
       this.setState({ menu: true });
       $('#top').animate({ opacity: 0 })
       setTimeout(() => $('#mid').animate({ opacity: 0 }, () => {
-        $('.drop-down').animate({ opacity: 1})
+        $('.drop-down').css({ visibility: 'visible' }).animate({ opacity: 1})
       }), 100);
       setTimeout(() => $('#bottom').animate({ opacity: 0 }, () => {
         $('#X').animate({ opacity: 1 });
       }), 200);
     } else {
       this.setState({ menu: false });
-      setTimeout(() => $('.drop-down').animate({ opacity: 0}), 200);
+      setTimeout(() => $('.drop-down').css({ visibility: 'hidden' }).animate({ opacity: 0}), 200);
       $('#X').animate({ opacity: 0 }, () => {
         $('#bottom').animate({ opacity: 1 })
         setTimeout(() => $('#mid').animate({ opacity: 1 }), 100);
@@ -69,6 +72,7 @@ constructor(props) {
         >
           <div
             id="ham"
+            onClick={this.toggleHam}
           >
             <div
               id="top"
@@ -82,15 +86,16 @@ constructor(props) {
             <img
               id="X"
               src="close-button.svg"
+              alt=""
             />
           </div>
         </div>
         <div
           className="drop-down"
         >
-        <Link
-          to={'/'}
-        >Under Construction</Link>
+          <Link
+            to={'/portfolio'}
+          >Portfolio</Link>
 {
           // <p>About</p>
           // <p>Blog</p>
@@ -121,6 +126,7 @@ constructor(props) {
             <img
               className="logo-img"
               src="logo-github.svg"
+              alt=""
             />
           </a>
           <span />
@@ -130,6 +136,7 @@ constructor(props) {
             <img
               className="logo-img"
               src="logo-linkedin.svg"
+              alt=""
             />
           </a>
         </div>
