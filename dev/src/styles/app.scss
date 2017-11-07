@@ -19,8 +19,8 @@ body, html, #root {
 
 	.menu {
 		position: absolute;
-		left: 2.8rem;
-		top: 2rem;
+		left: 4vmin;
+		top: 5vmin;
 	}
 
 	.page-title{
@@ -39,21 +39,20 @@ body, html, #root {
 		justify-content: center;
 		align-items: center;
 		opacity: 0;
-		width: 90vw;
+		width: 95vw;
 		
 		.pli {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			width: 25vw;
+			width: 30vw;
 			margin: 1vmin;
 			box-sizing: border-box;
 			box-shadow: 0px 0px 20px -3px grey;
 			border: 2px solid grey;
 
-
-			.pli-title{
-				width: 25vw;
+			.pli-title {
+				width: 30vw;
 				text-align: center;
 				font-family: Raleway;
 				font-size: 2vw;
@@ -79,7 +78,17 @@ body, html, #root {
 			}
 		}
 	}
+}
 
+@media screen and (max-width: 994px) {
+	.portfolio .pli-grid .pli {
+    width: 60vw;
+  }
+
+  .portfolio .pli-grid .pli .pli-title {
+    width: 60vw;
+    font-size: 5vw;
+  }
 }
 
 .app {
@@ -145,8 +154,8 @@ body, html, #root {
 
 .drop-down {
 	position: absolute;
-	left: 3rem;
-	top: 5rem;
+	left: 4.5vmin;
+	top: 9vmin;
 	opacity: 0;
 	visibility: hidden;
 	z-index: 10;

@@ -18,7 +18,8 @@ class PortfolioLI extends React.Component {
   }
 
   imgClickHandler() {
-    this.props.history.push(`/portfolio/${this.props.title.toLowerCase()}`)
+    window.location.assign(`https://github.com/CaribouBlue/${this.props.title}`);
+    //this.props.history.push(`/portfolio/${this.props.title.toLowerCase()}`);
   }
 
   getRender() {

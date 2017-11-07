@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import PortfolioLI from './PortfolioLI';
 
@@ -57,12 +58,16 @@ class Portfolio extends React.Component {
         title: 'Halfwaze',
       },
       {
+        thumbnail: 'project-thumbnails/task-sprint.png',
+        title: 'Task-Sprint',
+      },
+      {
         thumbnail: 'project-thumbnails/hokono.png',
         title: 'Hokono',
       },
       {
-        thumbnail: 'project-thumbnails/Halfwaze.png',
-        title: 'Halfwaze',
+        thumbnail: 'project-thumbnails/google-maps-for-react.png',
+        title: 'google-maps-for-react',
       },
     ];
     return (
@@ -115,6 +120,7 @@ class Portfolio extends React.Component {
           {
             portfolio.map(item => (
               <PortfolioLI
+                key={_.uniqueId()}
                 thumbnail={item.thumbnail}
                 title={item.title}
                 history={this.props.history}

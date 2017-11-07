@@ -14,11 +14,15 @@ const PortfolioRouter = props => (
     />
     <Route
       path="/portfolio/halfwaze"
-      render={() => <p>Halfwaaze</p>}
+      render={() => window.location.assign('https://github.com/CaribouBlue/Halfwaze') }
     />
     <Route
       path="/portfolio/hokono"
-      render={() => <p>Hokono</p>}
+      render={() => window.location.assign('https://github.com/CaribouBlue/Hokono') }
+    />
+    <Route
+      path="/portfolio/task-sprint"
+      render={() => window.location.assign('https://github.com/CaribouBlue/task-sprint') }
     />
     <Route
       path="*"
